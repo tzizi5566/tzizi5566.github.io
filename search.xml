@@ -3,6 +3,32 @@
   
     
     <entry>
+      <title><![CDATA[Android面试之Java篇]]></title>
+      <url>/2018/01/17/Android%E9%9D%A2%E8%AF%95%E4%B9%8BJava%E7%AF%87/</url>
+      <content type="html"><![CDATA[<p>本文收集整理了 Android 面试中会遇到与 Java 知识相关的简述题。</p>
+<a id="more"></a>
+<h2 id="Java面向对象的三个特征与含义"><a href="#Java面向对象的三个特征与含义" class="headerlink" title="Java面向对象的三个特征与含义"></a>Java面向对象的三个特征与含义</h2><p>Java面向对象的三个特征为：封装、继承、多态。</p>
+<p>封装：把对象的属性和方法封装到一个类中，对外只提供需要的属性和方法，还可以通过Java的四种访问修饰符对访问的范围进行限制。</p>
+<p>继承：子类对象可以继承父类的属性和方法，父类拥有的属性和方法子类同样拥有，子类还可以在此基础上扩展自身特有的属性和方法。</p>
+<p>多态：多态的存在有三个前提 1要有继承关系。2子类要重写父类的方法。3父类的引用指向子类对象。<br>一个方法在不同的对象中调用会有不同的结果。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 面试 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hello World]]></title>
       <url>/2018/01/13/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
