@@ -119,7 +119,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		391
+		1066
 		</span>		
 	
 	</div> 
@@ -134,13 +134,49 @@
 
 	  <p>Android基础、异步消息处理机制、View相关技术、Android构建、开源框架源码、Android性能优化、设计模式相关技术、Java高级相关技术、网络协议相关</p>
 <a id="more"></a>
-<h3 id="Activity面试详解"><a href="#Activity面试详解" class="headerlink" title="Activity面试详解"></a>Activity面试详解</h3><ol>
-<li><p>activity的四种状态<br>running/paused/stopped/killed</p>
+<h2 id="Activity面试详解"><a href="#Activity面试详解" class="headerlink" title="Activity面试详解"></a>Activity面试详解</h2><h3 id="一-Activity生命周期"><a href="#一-Activity生命周期" class="headerlink" title="一. Activity生命周期"></a>一. Activity生命周期</h3><ol>
+<li><p>Activity的四种状态<br>Running/Paused/Stopped/Killed</p>
 </li>
-<li><p>activity生命周期<br>Activity启动 -&gt; onCreate() -&gt; onStart() -&gt; onResume()<br>点击Home键回到主界面(Activity不可见) -&gt; onPause() -&gt; onStop()<br>当再次回到原Activity时 -&gt; onRestar() -&gt; onStar() -&gt; onResume()<br>退出当前Activity时 -&gt; onPause() -&gt; onStop() -&gt; onDestroy()</p>
+<li><p>Activity生命周期<br>Activity启动 -&gt; onCreate() -&gt; onStart() -&gt; onResume()<br>点击Home键回到主界面(Activity不可见) -&gt; onPause() -&gt; onStop()<br>当再次回到原Activity时 -&gt; onRestar() -&gt; onStar() -&gt; onResume()<br>退出当前Activity时 -&gt; onPause() -&gt; onStop() -&gt; onDestroy()</p>
 </li>
-<li><p>android进程优先级</p>
+<li><p>Android进程优先级<br>前台/可见/服务/后台/空</p>
 </li>
+</ol>
+<h3 id="二-Activity任务栈"><a href="#二-Activity任务栈" class="headerlink" title="二. Activity任务栈"></a>二. Activity任务栈</h3><h3 id="三-Activity启动模式"><a href="#三-Activity启动模式" class="headerlink" title="三. Activity启动模式"></a>三. Activity启动模式</h3><ol>
+<li><p>standard</p>
+</li>
+<li><p>singleTop</p>
+</li>
+<li><p>singleTask</p>
+</li>
+<li><p>singleInstance</p>
+</li>
+</ol>
+<h3 id="四-Scheme跳转协议"><a href="#四-Scheme跳转协议" class="headerlink" title="四. Scheme跳转协议"></a>四. Scheme跳转协议</h3><p>android中的scheme是一种页面内跳转协议，是一种非常好的实现机制，通过定义自己的scheme协议，可以非常方便跳转App中的各个页面；通过Scheme协议，服务器可以定制化告诉App跳转哪个页面，可以通过通知栏消息定制化跳转页面，可以通过H5页面跳转页面等。</p>
+<h2 id="Fragment面试详解"><a href="#Fragment面试详解" class="headerlink" title="Fragment面试详解"></a>Fragment面试详解</h2><h3 id="一-Fragment为什么被称为第五大组件"><a href="#一-Fragment为什么被称为第五大组件" class="headerlink" title="一. Fragment为什么被称为第五大组件"></a>一. Fragment为什么被称为第五大组件</h3><ol>
+<li><p>Fragment为什么被称为第五大组件</p>
+</li>
+<li><p>Fragemnt加载到Activity的两种方式<br>添加Fragment到Activity的布局文件当中<br>动态在Activity中添加Fragment</p>
+</li>
+<li><p>FragmentPagerAdapter与FragmentStatePagerAdapter区别</p>
+</li>
+</ol>
+<h3 id="二-Fragment的生命周期"><a href="#二-Fragment的生命周期" class="headerlink" title="二. Fragment的生命周期"></a>二. Fragment的生命周期</h3><ol>
+<li><p>Fragment的生命周期</p>
+</li>
+<li><p>Fragment从启动到销毁生命周期的全过程<br><img src="http://7xslu7.com1.z0.glb.clouddn.com/Fragment%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" alt=""></p>
+</li>
+</ol>
+<h3 id="三-Fragment之间的通信"><a href="#三-Fragment之间的通信" class="headerlink" title="三. Fragment之间的通信"></a>三. Fragment之间的通信</h3><ol>
+<li><p>在Fragment中调用Activity中的方法 getActivity</p>
+</li>
+<li><p>在Activity中调用Fragment中的方法 接口回调</p>
+</li>
+<li><p>在Fragment中调用Fragment中的方法 findFragmentById</p>
+</li>
+</ol>
+<h3 id="四-Fragment管理器：FragmentManager"><a href="#四-Fragment管理器：FragmentManager" class="headerlink" title="四. Fragment管理器：FragmentManager"></a>四. Fragment管理器：FragmentManager</h3><ol>
+<li>Fragment的replace、add、remove方法</li>
 </ol>
   
 	  </div>     
