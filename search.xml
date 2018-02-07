@@ -3,10 +3,9 @@
   
     
     <entry>
-      <title><![CDATA[Android面试]]></title>
-      <url>/2018/02/03/Android%E9%9D%A2%E8%AF%95/</url>
-      <content type="html"><![CDATA[<p>Android基础、异步消息处理机制、View相关技术、Android构建、开源框架源码、Android性能优化、设计模式相关技术、Java高级相关技术、网络协议相关</p>
-<a id="more"></a>
+      <title><![CDATA[Android基础相关面试问题]]></title>
+      <url>/2018/02/07/Android%E5%9F%BA%E7%A1%80%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<p>Activity、Fragment、Service、BroadcastReceiver、WebView、Binder<br><a id="more"></a></p>
 <h1 id="Activity面试详解"><a href="#Activity面试详解" class="headerlink" title="Activity面试详解"></a>Activity面试详解</h1><h3 id="一-Activity生命周期"><a href="#一-Activity生命周期" class="headerlink" title="一. Activity生命周期"></a>一. Activity生命周期</h3><ol>
 <li><p>Activity的四种状态<br>Running/Paused/Stopped/Killed</p>
 </li>
@@ -136,10 +135,30 @@
 </li>
 </ol>
 <ul>
-<li>LoaclBroadcastReceiver高效的原因主要是因为它内部是通过Handler实现的，它的sendBroadcast()方法含义并非和我们平时所用的一样，它的sendBroadcast()方法其实是通过Handler发送一个Message实现的</li>
+<li>LocalBroadcastReceiver高效的原因主要是因为它内部是通过Handler实现的，它的sendBroadcast()方法含义并非和我们平时所用的一样，它的sendBroadcast()方法其实是通过Handler发送一个Message实现的</li>
 <li>既然它内部是通过Handler来实现广播的发送，那么相比与系统广播通过Binder实现那肯定是更高效了，同时使用Handler来实现，别的应用无法向我们的应用发送该广播，而我们应用内发送的广播也不会离开我们的应用</li>
 <li>LocalBroadcastManager内部协作主要是靠这两个Map集合：mReceivers和mActions，当然还有一个List集合mPendingBroadcasts，这个主要是存储待接收的广播对象</li>
 </ul>
+<h1 id="WebViwe面试详解"><a href="#WebViwe面试详解" class="headerlink" title="WebViwe面试详解"></a>WebViwe面试详解</h1><h3 id="一-WebView常见的一些坑"><a href="#一-WebView常见的一些坑" class="headerlink" title="一. WebView常见的一些坑"></a>一. WebView常见的一些坑</h3><ol>
+<li><p>Android API level 16以及之前的版本存在远程代码执行安全漏洞，该漏洞源于程序没有正确限制使用WebView.addJavascriptInterface方法，远程攻击者可通过使用Java Reflection API利用该漏洞执行任意Java对象的方法</p>
+</li>
+<li><p>WebView在布局文件中的使用：WebView写在其他容器中</p>
+</li>
+<li><p>jsbridge</p>
+</li>
+<li><p>webViewClient.onPageFinished -&gt; webChromeClient.onProgressChanged</p>
+</li>
+<li><p>后台耗电</p>
+</li>
+<li><p>WebView硬件加速导致页面渲染问题</p>
+</li>
+</ol>
+<h3 id="二-关于WebView的内存泄漏问题"><a href="#二-关于WebView的内存泄漏问题" class="headerlink" title="二. 关于WebView的内存泄漏问题"></a>二. 关于WebView的内存泄漏问题</h3><ol>
+<li><p>独立进程，简单暴力，不过可能涉及到进程间通信</p>
+</li>
+<li><p>动态添加WebView，对传入WebView中使用的Content使用弱引用，动态添加WebView意思在布局创建个ViewGroup用来放置WebView，Activity创建时add进来，在Activity停止时remove掉</p>
+</li>
+</ol>
 ]]></content>
       
         <categories>
