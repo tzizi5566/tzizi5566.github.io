@@ -120,13 +120,13 @@ $(function (){
 		 $iconShare = $('.-mob-share');
 
 		 if($iconShare.is(':visible')){
-          $iconShare.hide();      
+          
+          	$iconShare.hide();      
+         
          }else {     
-          $iconShare.show();     
+          
+          	$iconShare.show();             
         }
 
 	});
-
-
 })
-
