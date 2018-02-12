@@ -99,7 +99,7 @@
 	<div class="post-info">
 
 		<time class="post-time"><span class="iconfont icon-date"></span>
-		2018/02/10 	
+		2018/02/12 	
 		</time>
 		
 					
@@ -123,7 +123,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		3364
+		3360
 		</span>		
 	
 	</div> 
@@ -143,16 +143,15 @@
 <li><p>Activity的四种状态<br>Running/Paused/Stopped/Killed</p>
 </li>
 <li><p>Activity生命周期</p>
-</li>
-</ol>
 <ul>
 <li>Activity启动 -&gt; onCreate() -&gt; onStart() -&gt; onResume()</li>
 <li>点击Home键回到主界面(Activity不可见) -&gt; onPause() -&gt; onStop()</li>
 <li>当再次回到原Activity时 -&gt; onRestar() -&gt; onStar() -&gt; onResume()</li>
 <li>退出当前Activity时 -&gt; onPause() -&gt; onStop() -&gt; onDestroy()</li>
 </ul>
-<ol>
-<li>Android进程优先级<br>前台/可见/服务/后台/空</li>
+</li>
+<li><p>Android进程优先级<br>前台/可见/服务/后台/空</p>
+</li>
 </ol>
 <h3 id="二-Activity任务栈"><a href="#二-Activity任务栈" class="headerlink" title="二. Activity任务栈"></a>二. Activity任务栈</h3><h3 id="三-Activity启动模式"><a href="#三-Activity启动模式" class="headerlink" title="三. Activity启动模式"></a>三. Activity启动模式</h3><ol>
 <li><p>standard</p>
@@ -169,14 +168,13 @@
 <li><p>Fragment为什么被称为第五大组件</p>
 </li>
 <li><p>Fragemnt加载到Activity的两种方式</p>
-</li>
-</ol>
 <ul>
 <li>添加Fragment到Activity的布局文件当中</li>
 <li>动态在Activity中添加Fragment</li>
 </ul>
-<ol>
-<li>FragmentPagerAdapter与FragmentStatePagerAdapter区别</li>
+</li>
+<li><p>FragmentPagerAdapter与FragmentStatePagerAdapter区别</p>
+</li>
 </ol>
 <h3 id="二-Fragment的生命周期"><a href="#二-Fragment的生命周期" class="headerlink" title="二. Fragment的生命周期"></a>二. Fragment的生命周期</h3><ol>
 <li><p>Fragment的生命周期</p>
@@ -199,48 +197,47 @@
 <li><p>Service是什么<br>Serviec是一个可以在后台执行长时间运行操作而没有用户界面的应用组件。</p>
 </li>
 <li><p>Service和Thread的区别</p>
-</li>
-</ol>
 <ul>
 <li>定义</li>
 <li>实际开发</li>
 <li>应用场景</li>
 </ul>
-<h3 id="二-开启Service的两种方式以及区别"><a href="#二-开启Service的两种方式以及区别" class="headerlink" title="二. 开启Service的两种方式以及区别"></a>二. 开启Service的两种方式以及区别</h3><ol>
-<li>startService</li>
+</li>
 </ol>
+<h3 id="二-开启Service的两种方式以及区别"><a href="#二-开启Service的两种方式以及区别" class="headerlink" title="二. 开启Service的两种方式以及区别"></a>二. 开启Service的两种方式以及区别</h3><ol>
+<li><p>startService</p>
 <ul>
 <li>定义一个类继承Service</li>
 <li>在Manifest.xml文件中配置该Service</li>
 <li>使用Context的startService(Intent)方法启动该Service</li>
 <li>不再使用时，调用stopService(Intent)方法停止该服务</li>
 </ul>
-<ol>
-<li>bindService</li>
-</ol>
+</li>
+<li><p>bindService</p>
 <ul>
 <li>创建BindService服务端，继承自Service并在类中创建一个实现IBinder接口的实例对象并提供公共方法给客户端调用</li>
 <li>从onBind()回调方法返回此Binder实例</li>
 <li>在客户端中，从onServiceConnected()回调方法接收Binder，并使用提供的方法调用绑定服务</li>
 </ul>
+</li>
+</ol>
 <h1 id="BroadcastReceiver面试详解"><a href="#BroadcastReceiver面试详解" class="headerlink" title="BroadcastReceiver面试详解"></a>BroadcastReceiver面试详解</h1><h3 id="一-广播"><a href="#一-广播" class="headerlink" title="一. 广播"></a>一. 广播</h3><ol>
 <li><p>广播的定义<br>在Android中，Broadcast是一种广泛运用在应用程序之间传输信息的机制，Android中我们要发送的广播内容是一个Intent，这个Intent中可以携带我们要传送的数据。</p>
 </li>
 <li><p>广播的场景</p>
-</li>
-</ol>
 <ul>
 <li>同一App具有多个进程的不同组件之间的消息通信</li>
 <li>不同App之间的消息通信</li>
 </ul>
-<ol>
-<li>广播的种类</li>
-</ol>
+</li>
+<li><p>广播的种类</p>
 <ul>
 <li>Normal Broadcast：Context.sendBroadcast</li>
 <li>System Broadcast：Context.sendOrderedBroadcast</li>
 <li>Local Broadcast：只在自身App内传播</li>
 </ul>
+</li>
+</ol>
 <h3 id="二-实现广播-receiver"><a href="#二-实现广播-receiver" class="headerlink" title="二. 实现广播-receiver"></a>二. 实现广播-receiver</h3><ol>
 <li><p>静态注册：注册完成就一直运行</p>
 </li>
@@ -265,13 +262,13 @@
 <li><p>其他App无法对你的App发送广播，因为你的App根本就不可能接收到非自身应用发送的该广播，因此你不必担心有安全漏洞可以利用</p>
 </li>
 <li><p>比系统的全局广播更加高效</p>
-</li>
-</ol>
 <ul>
 <li>LocalBroadcastReceiver高效的原因主要是因为它内部是通过Handler实现的，它的sendBroadcast()方法含义并非和我们平时所用的一样，它的sendBroadcast()方法其实是通过Handler发送一个Message实现的</li>
 <li>既然它内部是通过Handler来实现广播的发送，那么相比与系统广播通过Binder实现那肯定是更高效了，同时使用Handler来实现，别的应用无法向我们的应用发送该广播，而我们应用内发送的广播也不会离开我们的应用</li>
 <li>LocalBroadcastManager内部协作主要是靠这两个Map集合：mReceivers和mActions，当然还有一个List集合mPendingBroadcasts，这个主要是存储待接收的广播对象</li>
 </ul>
+</li>
+</ol>
 <h1 id="WebViwe面试详解"><a href="#WebViwe面试详解" class="headerlink" title="WebViwe面试详解"></a>WebViwe面试详解</h1><h3 id="一-WebView常见的一些坑"><a href="#一-WebView常见的一些坑" class="headerlink" title="一. WebView常见的一些坑"></a>一. WebView常见的一些坑</h3><ol>
 <li><p>Android API level 16以及之前的版本存在远程代码执行安全漏洞，该漏洞源于程序没有正确限制使用WebView.addJavascriptInterface方法，远程攻击者可通过使用Java Reflection API利用该漏洞执行任意Java对象的方法</p>
 </li>
@@ -301,28 +298,27 @@
 </li>
 </ol>
 <h3 id="二-Binder通信机制介绍"><a href="#二-Binder通信机制介绍" class="headerlink" title="二. Binder通信机制介绍"></a>二. Binder通信机制介绍</h3><ol>
-<li>为什么使用Binder</li>
-</ol>
+<li><p>为什么使用Binder</p>
 <ul>
 <li>Android使用Linux内核拥有着非常多的跨进程通信机制</li>
 <li>性能</li>
 <li>安全</li>
 </ul>
-<ol>
-<li>Binder通信模型</li>
-</ol>
+</li>
+<li><p>Binder通信模型</p>
 <ul>
 <li>通讯录：Binder驱动</li>
 <li>电话基站：ServiceManager</li>
 </ul>
-<ol>
-<li>到底什么是Binder</li>
-</ol>
+</li>
+<li><p>到底什么是Binder</p>
 <ul>
 <li>通常意义下，Binder指的是一种通信机制</li>
 <li>对于Server进程来说，Binder指的是Binder本地对象/对于Client来说，Binder指的是Binder代理对象</li>
 <li>对于传输过程而言，Binder是可以进行跨进程传递的对象</li>
 </ul>
+</li>
+</ol>
 <h3 id="三-Aidl"><a href="#三-Aidl" class="headerlink" title="三. Aidl"></a>三. Aidl</h3>  	
 
 	  </div>     
@@ -338,6 +334,17 @@
 
       
        
+
+         
+
+      
+          <a href="/2018/02/12/异步消息处理机制相关面试问题/">          
+
+            <span class="hover-item" title="异步消息处理机制相关面试问题">  上一篇 </span>  
+
+          </a>
+    
+      
     
       
 

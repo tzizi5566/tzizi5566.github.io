@@ -5,7 +5,7 @@
   <meta name="viewport"content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
   
   
-  <title>  标签 |   Tao&#39;s</title>
+  <title>  异步消息处理机制相关面试问题 |   Tao&#39;s</title>
 
  
   
@@ -82,30 +82,132 @@
       
         
 
-          <section id="main" class="slideDownMin" >
+          <section id="main">  
 
         
 
-        <section class="block">
+        <article class="post">
 
+	  
+	<div class="post-header slideDownMin center">
+
+	<span class="post-title">	
+		异步消息处理机制相关面试问题
+	</span>
+
+	
+	<div class="post-info">
+
+		<time class="post-time"><span class="iconfont icon-date"></span>
+		2018/02/12 	
+		</time>
+		
+					
+
+				<span class="post-meta">		
+				<span class="iconfont icon-category"></span>
+				<a class="category-link" href="/categories/面试/">面试</a>
+				</span>
+		
+			
+
+		
+				
+				<span class="post-meta">
+				<span class="iconfont icon-tag"></span>
+				<a class="tag-link" href="/tags/面试/">面试</a>
+				</span>			
+			
+
+
+		
+
+		<span class="post-words"><span class="iconfont icon-words"></span>
+		419
+		</span>		
+	
+	</div> 
+
+</div> 
+
+
+	  <div class="post-content slideDownMin">
+
+		
+
+
+
+
+	  	<p>Handler、Asynctask、HandlerThread、Intentservice<br><a id="more"></a></p>
+<h1 id="Handler面试详解"><a href="#Handler面试详解" class="headerlink" title="Handler面试详解"></a>Handler面试详解</h1><h3 id="一-什么是Handler"><a href="#一-什么是Handler" class="headerlink" title="一. 什么是Handler"></a>一. 什么是Handler</h3><p>Handler通过发送和处理Message和Runnable对象来关联相应线程的MessageQueue</p>
+<ol>
+<li><p>可以让对应的Message和Runnable在未来的某个时间点进行相应处理</p>
+</li>
+<li><p>让自己想要处理的耗时操作放在子线程里，让更新UI的操作放在主线程</p>
+</li>
+</ol>
+<h3 id="二-Handler的使用方法"><a href="#二-Handler的使用方法" class="headerlink" title="二. Handler的使用方法"></a>二. Handler的使用方法</h3><ol>
+<li><p>post(runnable)</p>
+</li>
+<li><p>sendMessage(message)</p>
+</li>
+</ol>
+<h3 id="三-Handler机制的原理"><a href="#三-Handler机制的原理" class="headerlink" title="三. Handler机制的原理"></a>三. Handler机制的原理</h3><h3 id="四-Handler引起的内存泄漏以及解决办法"><a href="#四-Handler引起的内存泄漏以及解决办法" class="headerlink" title="四. Handler引起的内存泄漏以及解决办法"></a>四. Handler引起的内存泄漏以及解决办法</h3><p>原因：静态内部类持有外部类的匿名引用，导致外部Activity无法释放</p>
+<p>解决办法：Handler内部持有外部Activity的弱引用，并把Handler改为静态内部类，在Activity的onDestroy中使用mHandler.removeCallback()</p>
+  	
+
+	  </div>     
+	  
+
+	<div class="post-footer">    
+
+   
+  
+
+
+   <nav class="post-nav">
 
       
-      
-        <span class="page-title">标签</span> 
-        
-        
-            
-            <a class="tag-wrap slideDownMin " href="/tags/面试/">    
-            <span class="iconfont icon-tag-inner"></span>           
-               <span class="tag-name"> 面试 </span>
-               <span class="meta-count">2</span>  
-             </a>
-        
-
+       
     
+      
 
-</section>
-</section> 
+         
+
+          <a href="/2018/02/12/Android基础相关面试问题/">         
+
+           <span title="Android基础相关面试问题">下一篇 </span>  
+
+          </a>
+
+      
+
+  </nav>  
+</div> 
+	
+	
+
+</article>
+
+
+
+<div id="toc" >		
+
+	<div class="toc-container">	
+
+	<span class="toc-contents iconfont icon-open"" onclick="change()"> 
+	<span>目录</span>
+	</span>
+
+	<ul class="toc-list"></ul>
+
+	</div>
+
+</div>
+
+
+<script src="/js/toc.js"></script>
+<script src="/js/post.js"></script></section> 
 
     </div>        
 
