@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[异步消息处理机制相关面试问题]]></title>
-      <url>/2018/02/12/%E5%BC%82%E6%AD%A5%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</url>
+      <url>/2018/02/13/%E5%BC%82%E6%AD%A5%E6%B6%88%E6%81%AF%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6%E7%9B%B8%E5%85%B3%E9%9D%A2%E8%AF%95%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>Handler、Asynctask、HandlerThread、Intentservice<br><a id="more"></a></p>
 <h1 id="Handler面试详解"><a href="#Handler面试详解" class="headerlink" title="Handler面试详解"></a>Handler面试详解</h1><h3 id="一-什么是Handler"><a href="#一-什么是Handler" class="headerlink" title="一. 什么是Handler"></a>一. 什么是Handler</h3><p>Handler通过发送和处理Message和Runnable对象来关联相应线程的MessageQueue</p>
 <ol>
@@ -21,6 +21,31 @@
 </ol>
 <h3 id="三-Handler机制的原理"><a href="#三-Handler机制的原理" class="headerlink" title="三. Handler机制的原理"></a>三. Handler机制的原理</h3><h3 id="四-Handler引起的内存泄漏以及解决办法"><a href="#四-Handler引起的内存泄漏以及解决办法" class="headerlink" title="四. Handler引起的内存泄漏以及解决办法"></a>四. Handler引起的内存泄漏以及解决办法</h3><p>原因：静态内部类持有外部类的匿名引用，导致外部Activity无法释放</p>
 <p>解决办法：Handler内部持有外部Activity的弱引用，并把Handler改为静态内部类，在Activity的onDestroy中使用mHandler.removeCallback()</p>
+<h1 id="AsyncTask面试详解"><a href="#AsyncTask面试详解" class="headerlink" title="AsyncTask面试详解"></a>AsyncTask面试详解</h1><h3 id="一-什么是AsyncTask"><a href="#一-什么是AsyncTask" class="headerlink" title="一. 什么是AsyncTask"></a>一. 什么是AsyncTask</h3><p>它本质上就是一个封装了线程池和Handler的异步框架</p>
+<h3 id="二-AsyncTask的使用方法"><a href="#二-AsyncTask的使用方法" class="headerlink" title="二. AsyncTask的使用方法"></a>二. AsyncTask的使用方法</h3><ol>
+<li><p>三个参数</p>
+</li>
+<li><p>五个方法</p>
+</li>
+</ol>
+<h3 id="三-AsyncTask内部原理"><a href="#三-AsyncTask内部原理" class="headerlink" title="三. AsyncTask内部原理"></a>三. AsyncTask内部原理</h3><ol>
+<li><p>AsyncTask的本质是一个静态的线程池，AsyncTask派生出的子类实现不同的异步任务，这些任务都是提交到静态的线程池中执行</p>
+</li>
+<li><p>线程池中的工作线程执行doInBackground(mParams)方法执行异步任务</p>
+</li>
+<li><p>当任务状态改变后，工作线程会向UI线程发送消息，AsyncTask内部的InternalHandler响应这些消息，并调用相关的回调函数</p>
+</li>
+</ol>
+<h3 id="四-AsyncTask的注意事项"><a href="#四-AsyncTask的注意事项" class="headerlink" title="四. AsyncTask的注意事项"></a>四. AsyncTask的注意事项</h3><ol>
+<li><p>内存泄漏</p>
+</li>
+<li><p>生命周期</p>
+</li>
+<li><p>结果丢失</p>
+</li>
+<li><p>并行or串行</p>
+</li>
+</ol>
 ]]></content>
       
         <categories>
