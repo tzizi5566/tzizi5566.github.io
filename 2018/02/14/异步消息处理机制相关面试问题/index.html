@@ -99,7 +99,7 @@
 	<div class="post-info">
 
 		<time class="post-time"><span class="iconfont icon-date"></span>
-		2018/02/13 	
+		2018/02/14 	
 		</time>
 		
 					
@@ -123,7 +123,7 @@
 		
 
 		<span class="post-words"><span class="iconfont icon-words"></span>
-		746
+		1131
 		</span>		
 	
 	</div> 
@@ -179,7 +179,23 @@
 <li><p>并行or串行</p>
 </li>
 </ol>
-  	
+<h1 id="HandlerThread面试详解"><a href="#HandlerThread面试详解" class="headerlink" title="HandlerThread面试详解"></a>HandlerThread面试详解</h1><h3 id="一-HandlerThread是什么"><a href="#一-HandlerThread是什么" class="headerlink" title="一. HandlerThread是什么"></a>一. HandlerThread是什么</h3><p>开启Thread子线程进行耗时操作</p>
+<p>多次创建和销毁线程是很消耗系统资源的</p>
+<p>Handler + Thread + Looper</p>
+<p>是一个Thread内部有Looper</p>
+<ul>
+<li><p>HandlerThread本质上是一个线程类，它继承了Thread</p>
+</li>
+<li><p>HandlerThread有自己的内部Looper对象，可以进行Looper循环</p>
+</li>
+<li><p>通过获取HandlerThread的Looper对象传递给Handler对象，可以在HandlerMessage方法中执行异步任务</p>
+</li>
+<li><p>优点是不会有阻塞，减少了对性能的消耗，缺点是不能同时进行多任务的处理，需要等待进行处理，处理效率较低</p>
+</li>
+<li><p>与线程池注重并发不同，HandlerThread是一个串行队列，HandlerThread背后只有一个线程</p>
+</li>
+</ul>
+<h3 id="二-HandlerThread源码解析"><a href="#二-HandlerThread源码解析" class="headerlink" title="二. HandlerThread源码解析"></a>二. HandlerThread源码解析</h3>  	
 
 	  </div>     
 	  
